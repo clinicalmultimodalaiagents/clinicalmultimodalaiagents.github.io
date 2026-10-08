@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Workshop on Multimodal AI Agents for Biomedical Imaging and Clinical Decision Support at IEEE ISBI 2027, Lausanne, May 25, 2027.">
+<title>Multimodal Clinical Agents @ ISBI 2027</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;500&display=swap">
+<style>
+/* Layout: al-folio style like LCFM. White nav, full-width illustrated banner with centered info, single content column, circular team grid, dark footer */
+:root{
+  --bg:#ffffff; --text:#000000; --text-light:#828282; --theme:#2698BA; --divider:rgba(0,0,0,.1);
+  --dates-bg:#f2fbf2; --card:#ffffff; --footer-bg:#1C1C1D; --footer-text:#cfcfcf; --avatar:#e3eef1;
+  --sans:"Roboto", "Helvetica Neue", Arial, sans-serif; --slab:"Roboto Slab", Georgia, serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1C1C1D; --text:#cfcfcf; --text-light:#cfcfcf; --theme:#73bfd6; --divider:#424246;
+  --dates-bg:#22302a; --card:#212529; --footer-bg:#cfcfcf; --footer-text:#1C1C1D; --avatar:#2b3a40; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1C1C1D; --text:#cfcfcf; --text-light:#cfcfcf; --theme:#73bfd6; --divider:#424246;
+  --dates-bg:#22302a; --card:#212529; --footer-bg:#cfcfcf; --footer-text:#1C1C1D; --avatar:#2b3a40; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.6}
+a{color:var(--theme);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--theme);outline-offset:2px}
+b,strong{font-weight:700}
+.container{max-width:1000px;margin:0 auto;padding-inline:16px}
+
+/* Navbar */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);box-shadow:0 1px 0 var(--divider)}
+nav .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 16px;padding-block:10px}
+nav .brand{color:var(--text);font-size:19px;font-weight:300}
+nav .brand:hover{text-decoration:none;color:var(--theme)}
+nav ul{display:flex;flex-wrap:wrap;list-style:none;margin:0;padding:0;gap:0 4px}
+nav ul a{color:var(--text);padding:6px 8px;display:block;font-weight:400}
+nav ul a:hover{color:var(--theme);text-decoration:none}
+
+/* Header block */
+.banner{color:var(--text);text-align:center;padding-block:40px 24px;border-bottom:1px solid var(--divider)}
+.banner .inner{position:relative;z-index:1;max-width:820px;margin:0 auto;padding-inline:16px}
+.banner h1{font-family:var(--sans);font-weight:500;font-size:clamp(24px,3.6vw,34px);line-height:1.25;margin:0 0 18px;text-wrap:balance}
+.banner p{margin:0;font-size:17px;font-weight:400;line-height:1.7}
+.banner a{color:var(--theme);font-weight:500;text-decoration:underline;text-underline-offset:2px}
+.mail{user-select:all}
+
+/* Content */
+main{padding-block:40px 24px}
+h2{font-family:var(--sans);font-weight:500;font-size:32px;margin:48px 0 16px}
+h2:first-child{margin-top:0}
+h3{font-weight:500;font-size:22px;margin:28px 0 10px}
+p{margin:0 0 12px}
+main ul{padding-left:22px;margin:0 0 12px}
+main li{margin-bottom:4px}
+main li ul{margin-top:4px;margin-bottom:0}
+section[id]{scroll-margin-top:60px}
+
+.dates-box{background:var(--dates-bg);border-radius:12px;padding:18px 20px;margin:0 0 18px;max-width:760px;box-shadow:0 6px 18px rgba(29,53,87,.08)}
+.dates-box h3{margin-top:0}
+.dates-box ul{margin:0;padding-left:20px;font-weight:700}
+.dates-box .sub{font-weight:400;color:var(--text-light);font-size:14px}
+
+.sched{border-collapse:collapse;width:100%;max-width:760px}
+.sched td{padding:8px 0;border-bottom:1px solid var(--divider);vertical-align:top}
+.sched td:first-child{white-space:nowrap;padding-right:24px;width:1%;font-weight:500;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+
+/* Team grid, matches LCFM .team-container */
+.team-container{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;max-width:1000px;padding:20px 0}
+@media (max-width:768px){.team-container{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.team-member{text-align:center;min-width:0}
+.team-member .photo{width:130px;height:130px;max-width:100%;border-radius:50%;margin:10px auto;object-fit:cover;
+  background:var(--avatar);color:var(--theme);display:grid;place-items:center;font-size:36px;font-weight:300}
+.team-member p{margin:0 0 20px;line-height:1.45}
+.muted{color:var(--text-light)}
+
+footer{background:var(--footer-bg);color:var(--footer-text);font-size:14px;padding-block:14px;text-align:center}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<nav aria-label="Main">
+  <div class="container">
+    <a class="brand" href="#top">Multimodal Clinical Agents @ ISBI 2027</a>
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#cfp">Call for Papers</a></li>
+      <!-- <li><a href="#speakers">Speakers</a></li> -->
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#organizers">Organizers</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="banner" id="top">
+  <div class="inner">
+    <h1>Workshop on Multimodal AI Agents for Biomedical Imaging and Clinical Decision Support</h1>
+    <p>
+      @ IEEE ISBI 2027<br>
+      Location: SwissTech Convention Center, EPFL, Lausanne, Switzerland<br>
+      Date: May 25, 2027<br><br>
+      Quick Links: Submission portal (opens December 1, 2026)<br>
+      Contact Us: <span class="mail">ur2068@nyu.edu</span>
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+<section id="cfp">
+  <h2>Call for Papers</h2>
+
+  <div class="dates-box">
+    <h3>Important Dates</h3>
+    <ul>
+      <li>Submission Portal Opens: December 1, 2026</li>
+      <li>Submission Deadline: January 26, 2027, 23:59 AOE<br><span class="sub">Set by ISBI 2027 for all workshops. No extensions.</span></li>
+      <li>Review Period: January 27 – February 16, 2027</li>
+      <li>Decisions: February 23, 2027</li>
+      <li>Camera Ready: March 9, 2027, 23:59 AOE</li>
+      <li>Workshop: May 25, 2027, Lausanne</li>
+    </ul>
+  </div>
+
+  <h3>Guidelines</h3>
+  <ul>
+    <li>Paper submission will be hosted on the submission portal linked above once it opens.</li>
+    <li>We welcome papers <b>up to 4 pages</b> in the IEEE ISBI format, plus one page for references.
+      <ul>
+        <li>The paper should be anonymized and uploaded as a single PDF.</li>
+        <li>Posting papers on preprint servers like arXiv is permitted.</li>
+        <li>The LaTeX template will be linked here when the portal opens.</li>
+      </ul>
+    </li>
+    <li>Accepted papers will be presented as orals or posters. At least one author must register for ISBI 2027 and present in person.</li>
+    <li>The review process will be double-blind, with at least two reviews per paper.</li>
+  </ul>
+
+  <h3>Topics of Interest</h3>
+  <p>Foundation models and vision-language models have advanced medical image analysis quickly. Clinical decisions, however, are multimodal and longitudinal: an ICU clinician reads a chest radiograph alongside ventilator settings, lab trends, and nursing notes accumulated across a stay. Agentic systems that plan, call specialized tools such as segmentation or retrieval models, and combine the evidence are a natural fit for this setting. How should agents ground their claims in image regions? How should they handle patient histories that exceed context limits? How do we evaluate the reasoning and not only the final answer? How do these systems fail across hospitals and scanners? We welcome works that address these questions across imaging, clinical machine learning, and agentic AI, including but not limited to:</p>
+  <ul>
+    <li>Multimodal fusion of imaging with EHR, physiological time series, and clinical text</li>
+    <li>Agent architectures, tool use, and multi-agent systems for diagnosis, triage, and prognosis</li>
+    <li>Long-context and memory mechanisms for patient trajectories</li>
+    <li>Spatial, anatomical, and visual grounding of agent outputs</li>
+    <li>Benchmarks and evaluation protocols that reflect clinical workflows</li>
+    <li>Robustness, uncertainty, and generalization across sites and scanners</li>
+    <li>Human-AI interaction, safety, and clinical translation</li>
+  </ul>
+</section>
+
+<!--
+<section id="speakers">
+  <h2>Speakers</h2>
+  <div class="team-container">
+    <div class="team-member"><div class="photo" aria-hidden="true">MM</div><p><a href="https://www.michaelmoor.me/" target="_blank" rel="noopener">Michael Moor</a><br>ETH Zurich</p></div>
+    <div class="team-member"><div class="photo" aria-hidden="true">?</div><p>TBA</p></div>
+    <div class="team-member"><div class="photo" aria-hidden="true">?</div><p>TBA</p></div>
+  </div>
+  <p>More to be announced.</p>
+
+  <h2>Panelists</h2>
+  <div class="team-container">
+    <div class="team-member"><div class="photo" aria-hidden="true">?</div><p>TBA</p></div>
+    <div class="team-member"><div class="photo" aria-hidden="true">?</div><p>TBA</p></div>
+    <div class="team-member"><div class="photo" aria-hidden="true">?</div><p>TBA</p></div>
+  </div>
+  <p>More to be announced.</p>
+</section>
+-->
+
+<section id="schedule">
+  <h2>Schedule</h2>
+  <p class="muted">Tentative. May 25, 2027 (CEST), half day.</p>
+  <div class="tbl">
+  <table class="sched">
+    <tr><td>08:30</td><td>Opening remarks</td></tr>
+    <tr><td>08:40</td><td>Invited talk 1</td></tr>
+    <tr><td>09:10</td><td>Oral presentations</td></tr>
+    <tr><td>09:55</td><td>Invited talk 2</td></tr>
+    <tr><td>10:25</td><td>Coffee break and poster session</td></tr>
+    <tr><td>11:00</td><td>Invited talk 3</td></tr>
+    <tr><td>11:30</td><td>Panel discussion: from benchmark to bedside</td></tr>
+    <tr><td>12:15</td><td>Best paper award and closing</td></tr>
+  </table>
+  </div>
+</section>
+
+<section id="organizers">
+  <h2>Organizers</h2>
+  <div class="team-container">
+    <div class="team-member"><div class="photo" aria-hidden="true">UR</div><p><a href="https://rumaima.github.io/umaimarahman.github.io/" target="_blank" rel="noopener">Umaima Rahman</a><br>New York University Abu Dhabi</p></div>
+    <div class="team-member"><div class="photo" aria-hidden="true">FS</div><p>Farah E. Shamout<br>New York University Abu Dhabi</p></div>
+    <div class="team-member"><div class="photo" aria-hidden="true">DM</div><p>Dwarikanath Mahapatra<br>Khalifa University</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">© Copyright 2027. Workshop on Multimodal AI Agents for Biomedical Imaging and Clinical Decision Support @ IEEE ISBI 2027</div>
+</footer>
+</body>
+</html>
