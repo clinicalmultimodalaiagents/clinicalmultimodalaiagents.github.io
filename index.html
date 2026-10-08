@@ -44,6 +44,10 @@ nav ul a:hover{color:var(--theme);text-decoration:none}
 .banner p{margin:0;font-size:17px;font-weight:400;line-height:1.7}
 .banner a{color:var(--theme);font-weight:500;text-decoration:underline;text-underline-offset:2px}
 .mail{user-select:all}
+.isbi-logo{display:block;height:110px;width:auto;max-width:100%;margin:0 auto 18px}
+.partners{display:flex;flex-wrap:wrap;justify-content:space-around;align-items:center;gap:24px 40px;padding-block:28px;border-bottom:1px solid var(--divider)}
+.partners img{height:80px;width:auto;max-width:100%;object-fit:contain}
+.intro{text-align:justify;hyphens:auto}
 
 /* Content */
 main{padding-block:40px 24px}
@@ -96,8 +100,8 @@ footer{background:var(--footer-bg);color:var(--footer-text);font-size:14px;paddi
 <header class="banner" id="top">
   <div class="inner">
     <h1>Workshop on Multimodal AI Agents for Biomedical Imaging and Clinical Decision Support</h1>
+    <img class="isbi-logo" src="img/isbi2027.png" alt="IEEE ISBI 2027, Lausanne, May 25–28, 2027">
     <p>
-      @ IEEE ISBI 2027<br>
       Location: SwissTech Convention Center, EPFL, Lausanne, Switzerland<br>
       Date: May 25, 2027<br><br>
       Quick Links: Submission portal (opens December 1, 2026)<br>
@@ -106,7 +110,18 @@ footer{background:var(--footer-bg);color:var(--footer-text);font-size:14px;paddi
   </div>
 </header>
 
+<div class="container partners">
+  <img src="img/clinical-ai-lab.png" alt="Clinical AI Lab, NYU Abu Dhabi">
+  <img src="img/nyuad.png" alt="New York University Abu Dhabi">
+  <img src="img/khalifa-university.png" alt="Khalifa University">
+</div>
+
 <main class="container">
+
+<section id="intro">
+  <h2>Introduction</h2>
+  <p class="intro">Clinical decisions rarely rest on a single image. Clinicians combine imaging with vital signs, laboratory results, medication histories, and free-text notes that change over hours and days. Multimodal foundation models represent the heterogeneous modalities of image, text and structured records jointly, while agentic frameworks offer the control layer that decides what to look at next. Together, they can now plan, call tools, retrieve evidence, and reason across these diverse modalities. This workshop brings together researchers in medical imaging, clinical machine learning, and agentic AI to examine how multimodal agents should be designed, grounded, evaluated, and deployed for clinical decision support.</p>
+</section>
 
 <section id="cfp">
   <h2>Call for Papers</h2>
@@ -175,19 +190,19 @@ footer{background:var(--footer-bg);color:var(--footer-text);font-size:14px;paddi
   <p class="muted">May 25, 2027 (CEST), 10:00–16:00.</p>
   <div class="tbl">
   <table class="sched">
-    <tr><td>09:30–09:10</td><td>Opening remarks and workshop overview <span class="muted">(10 min)</span></td></tr>
-    <tr><td>09:10–09:40</td><td>Keynote 1: Multimodal foundation models for medical imaging <span class="muted">(30 min)</span></td></tr>
-    <tr><td>09:40–10:10</td><td>Keynote 2: LLM agents for clinical decision support <span class="muted">(30 min)</span></td></tr>
-    <tr><td>10:10–10:25</td><td>Joint keynote Q&amp;A and discussion <span class="muted">(15 min)</span></td></tr>
-    <tr><td>10:25–11:10</td><td>Coffee break and poster session <span class="muted">(45 min)</span></td></tr>
-    <tr><td>11:10–12:00</td><td>Oral session: three to four selected short papers <span class="muted">(50 min)</span></td></tr>
-    <tr><td>12:00–13:00</td><td>Lunch break, posters, and networking <span class="muted">(60 min)</span></td></tr>
-    <tr><td>13:00–13:20</td><td>Invited clinician talk: Decision-making in critical care and what clinicians need from AI <span class="muted">(20 min)</span></td></tr>
-    <tr><td>13:20–13:35</td><td>Clinician talk Q&amp;A and transition <span class="muted">(15 min)</span></td></tr>
-    <tr><td>13:35–14:10</td><td>Panel discussion: Evaluating and deploying multimodal agents safely <span class="muted">(35 min)</span></td></tr>
-    <tr><td>14:10–14:35</td><td>Coffee break and continued poster/networking session <span class="muted">(25 min)</span></td></tr>
-    <tr><td>14:35–14:55</td><td>Open discussion, community input, and next steps <span class="muted">(20 min)</span></td></tr>
-    <tr><td>14:55–15:00</td><td>Best paper award and closing remarks <span class="muted">(5 min)</span></td></tr>
+    <tr><td>10:00–10:10</td><td>Opening remarks and workshop overview <span class="muted">(10 min)</span></td></tr>
+    <tr><td>10:10–10:40</td><td>Keynote 1: Multimodal foundation models for medical imaging <span class="muted">(30 min)</span></td></tr>
+    <tr><td>10:40–11:10</td><td>Keynote 2: LLM agents for clinical decision support <span class="muted">(30 min)</span></td></tr>
+    <tr><td>11:10–11:25</td><td>Joint keynote Q&amp;A and discussion <span class="muted">(15 min)</span></td></tr>
+    <tr><td>11:25–12:10</td><td>Coffee break and poster session <span class="muted">(45 min)</span></td></tr>
+    <tr><td>12:10–13:00</td><td>Oral session: three to four selected short papers <span class="muted">(50 min)</span></td></tr>
+    <tr><td>13:00–14:00</td><td>Lunch break, posters, and networking <span class="muted">(60 min)</span></td></tr>
+    <tr><td>14:00–14:20</td><td>Invited clinician talk: Decision-making in critical care and what clinicians need from AI <span class="muted">(20 min)</span></td></tr>
+    <tr><td>14:20–14:35</td><td>Clinician talk Q&amp;A and transition <span class="muted">(15 min)</span></td></tr>
+    <tr><td>14:35–15:10</td><td>Panel discussion: Evaluating and deploying multimodal agents safely <span class="muted">(35 min)</span></td></tr>
+    <tr><td>15:10–15:35</td><td>Coffee break and continued poster/networking session <span class="muted">(25 min)</span></td></tr>
+    <tr><td>15:35–15:55</td><td>Open discussion, community input, and next steps <span class="muted">(20 min)</span></td></tr>
+    <tr><td>15:55–16:00</td><td>Best paper award and closing remarks <span class="muted">(5 min)</span></td></tr>
   </table>
   </div>
 </section>
