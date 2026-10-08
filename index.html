@@ -10,15 +10,15 @@
 /* Layout: al-folio style like LCFM. White nav, full-width illustrated banner with centered info, single content column, circular team grid, dark footer */
 :root{
   --bg:#ffffff; --text:#000000; --text-light:#828282; --theme:#2698BA; --divider:rgba(0,0,0,.1);
-  --dates-bg:#f2fbf2; --card:#ffffff; --footer-bg:#1C1C1D; --footer-text:#cfcfcf; --avatar:#e3eef1;
+  --dates-bg:#f6eef9; --card:#ffffff; --footer-bg:#1C1C1D; --footer-text:#cfcfcf; --avatar:#e3eef1;
   --sans:"Roboto", "Helvetica Neue", Arial, sans-serif; --slab:"Roboto Slab", Georgia, serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#1C1C1D; --text:#cfcfcf; --text-light:#cfcfcf; --theme:#73bfd6; --divider:#424246;
-  --dates-bg:#22302a; --card:#212529; --footer-bg:#cfcfcf; --footer-text:#1C1C1D; --avatar:#2b3a40; color-scheme:dark}}
+  --dates-bg:#2e2633; --card:#212529; --footer-bg:#cfcfcf; --footer-text:#1C1C1D; --avatar:#2b3a40; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#1C1C1D; --text:#cfcfcf; --text-light:#cfcfcf; --theme:#73bfd6; --divider:#424246;
-  --dates-bg:#22302a; --card:#212529; --footer-bg:#cfcfcf; --footer-text:#1C1C1D; --avatar:#2b3a40; color-scheme:dark}
+  --dates-bg:#2e2633; --card:#212529; --footer-bg:#cfcfcf; --footer-text:#1C1C1D; --avatar:#2b3a40; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.6}
@@ -60,7 +60,7 @@ main li{margin-bottom:4px}
 main li ul{margin-top:4px;margin-bottom:0}
 section[id]{scroll-margin-top:60px}
 
-.dates-box{background:var(--dates-bg);border-radius:12px;padding:18px 20px;margin:0 0 18px;max-width:760px;box-shadow:0 6px 18px rgba(29,53,87,.08)}
+.dates-box{background:var(--dates-bg);border-radius:12px;padding:18px 20px;margin:0 0 18px;box-shadow:0 6px 18px rgba(29,53,87,.08)}
 .dates-box h3{margin-top:0}
 .dates-box ul{margin:0;padding-left:20px;font-weight:700}
 .dates-box .sub{font-weight:400;color:var(--text-light);font-size:14px}
